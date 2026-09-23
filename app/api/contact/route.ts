@@ -1,0 +1,3 @@
+import { NextResponse } from "next/server";
+import { prisma } from "../../../lib/prisma";
+export async function POST(request:Request){const body=await request.json() as Record<string,string>;const firstName=body.firstName?.trim(),lastName=body.lastName?.trim(),email=body.email?.trim().toLowerCase(),subject=body.subject?.trim(),country=body.country?.trim()||null;if(!firstName||!lastName||!email||!subject||subject.length>2000)return NextResponse.json({error:"Please complete all required fields."},{status:400});await prisma.contact.create({data:{firstName,lastName,email,country,subject}});return NextResponse.json({ok:true},{status:201})}

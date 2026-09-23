@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@layer components {
+  .control {
+    @apply mt-2 block w-full rounded-xl border border-emerald-950/15 bg-white px-4 py-3 font-normal text-emerald-950 outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-100;
+  }
+}
+
+:root { --background: #fbfdf8; --foreground: #073d2c; }
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: Arial, Helvetica, sans-serif; }
+button, a { transition: all 180ms ease; }
+button:focus-visible, a:focus-visible { outline: 3px solid #84cc16; outline-offset: 3px; }

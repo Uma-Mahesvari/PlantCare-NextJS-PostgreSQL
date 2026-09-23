@@ -1,0 +1,4 @@
+import { NextResponse } from "next/server";
+import { hash } from "bcryptjs";
+import { prisma } from "../../../lib/prisma";
+export async function POST(request:Request){const body=await request.json() as {firstName?:string;lastName?:string;email?:string;password?:string};const firstName=body.firstName?.trim(),lastName=body.lastName?.trim(),email=body.email?.trim().toLowerCase(),password=body.password??"";if(!firstName||!lastName||!email||password.length<8)return NextResponse.json({error:"Complete all fields and use at least 8 password characters."},{status:400});try{await prisma.user.create({data:{firstName,lastName,email,passwordHash:await hash(password,12)}});return NextResponse.json({ok:true},{status:201})}catch{return NextResponse.json({error:"An account already exists for this email."},{status:409})}}

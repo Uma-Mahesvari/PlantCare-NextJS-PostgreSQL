@@ -1,0 +1,10 @@
+"use client";
+import { FormEvent, useState } from "react";
+import Link from "next/link";
+import { signIn } from "next-auth/react";
+
+export default function LoginPage() {
+  const [message, setMessage] = useState("");
+  async function submit(event: FormEvent<HTMLFormElement>) { event.preventDefault(); const data = new FormData(event.currentTarget); const result = await signIn("credentials", { email: data.get("email"), password: data.get("password"), redirect: false }); setMessage(result?.error ? "Email or password is incorrect." : "Signed in successfully."); if (!result?.error) window.location.href = "/"; }
+  return <main className="grid min-h-screen place-items-center bg-[radial-gradient(circle_at_top_left,#dceecb,transparent_35%),#fbfdf8] px-5 py-12"><div className="w-full max-w-md rounded-[2rem] border border-emerald-950/10 bg-white p-8 shadow-2xl shadow-emerald-950/10"><Link href="/" className="flex items-center gap-3"><span className="grid size-10 place-items-center rounded-full bg-emerald-800 text-white">❧</span><b className="font-serif text-2xl">PlantCare</b></Link><h1 className="mt-8 font-serif text-4xl">Welcome back</h1><p className="mt-2 text-sm text-emerald-950/60">Sign in to manage your cart and orders.</p><form onSubmit={submit} className="mt-7 space-y-4"><label className="block text-sm font-bold">Email<input name="email" type="email" required className="mt-2 w-full rounded-2xl border border-emerald-950/15 px-4 py-3 font-normal"/></label><label className="block text-sm font-bold">Password<input name="password" type="password" required className="mt-2 w-full rounded-2xl border border-emerald-950/15 px-4 py-3 font-normal"/></label>{message && <p role="alert" className="rounded-xl bg-amber-50 p-3 text-sm text-amber-900">{message}</p>}<button className="w-full rounded-full bg-emerald-900 px-5 py-3.5 font-bold text-white">Sign in</button></form><p className="mt-6 text-center text-sm text-emerald-950/60">New customer? <Link href="/register" className="font-bold text-emerald-800 underline">Create an account</Link></p></div></main>;
+}
