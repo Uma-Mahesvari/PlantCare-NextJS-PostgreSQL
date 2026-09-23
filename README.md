@@ -8,6 +8,24 @@ PlantCare is an e-commerce application for browsing and managing plant products.
 
 The project demonstrates full-stack development using Next.js, TypeScript, PostgreSQL, Prisma, authentication, and responsive UI development.
 
+## Screenshots
+
+### Home Page
+
+![PlantCare Home Page](docs/home.png)
+
+### Products
+
+![PlantCare Products](docs/plants.png)
+
+### Product Details
+
+![PlantCare Product Details](docs/plant_details.png)
+
+### Admin Dashboard
+
+![PlantCare Admin Dashboard](docs/admin.png)
+
 ## Key Features
 
 - Plant product listing
