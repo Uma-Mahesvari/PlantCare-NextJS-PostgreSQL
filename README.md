@@ -94,3 +94,25 @@ plantcare-postgres/
 ├── next.config.ts
 ├── tsconfig.json
 └── README.md
+```
+## Customer Support Chatbot
+
+PlantCare includes a rule-based customer support chatbot integrated with the application backend.
+
+The chatbot can:
+
+* Track the signed-in customer's latest order
+* Retrieve order status from PostgreSQL
+* Provide order information and item details
+* Recommend products from the catalogue
+* Answer common delivery and shipping questions
+* Provide return and refund guidance
+* Answer basic payment questions
+* Provide basic plant-care guidance
+* Direct customers to the contact/support page
+
+The chatbot uses Next.js API routes, Prisma, PostgreSQL, and Auth.js to securely access customer-specific order information.
+
+### Planned Enhancement
+
+An AI/LLM-powered conversational assistant can be added as a future enhancement to provide more flexible natural-language responses and contextual customer support.
