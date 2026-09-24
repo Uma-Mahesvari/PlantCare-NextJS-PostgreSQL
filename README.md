@@ -17,6 +17,7 @@ The project demonstrates full-stack development using Next.js, TypeScript, Postg
 ### Products
 
 ![PlantCare Products](docs/plants.png)
+![PlantCare Products](docs/planters.png)
 
 ### Product Details
 
@@ -25,6 +26,12 @@ The project demonstrates full-stack development using Next.js, TypeScript, Postg
 ### Admin Dashboard
 
 ![PlantCare Admin Dashboard](docs/admin.png)
+
+## Application Architecture
+
+The application follows a modern full-stack architecture using Next.js, TypeScript, PostgreSQL, Prisma ORM, and Auth.js.
+
+![PlantCare Application Architecture](docs/architecture.png)
 
 ## Key Features
 
