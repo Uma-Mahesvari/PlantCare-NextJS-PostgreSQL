@@ -17,6 +17,8 @@ The project demonstrates full-stack development using Next.js, TypeScript, Postg
 ### Products
 
 ![PlantCare Products](docs/plants.png)
+
+
 ![PlantCare Products](docs/planters.png)
 
 ### Product Details
